@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'mvnw clean check'
+        sh 'mvn -B -DskipTests clean package'
       }
     }
     stage('Build') {
