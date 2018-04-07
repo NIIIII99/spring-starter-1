@@ -5,12 +5,12 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        mvnw.bat clean
+        mvnw.cmd clean
       }
     }
     stage('Build') {
       steps {
-        mvnw.bat package
+        mvnw.cmd package
       }
     }
   }
