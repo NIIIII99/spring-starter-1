@@ -1,19 +1,16 @@
 pipeline {
   agent {
-    docker {
-      image 'maven:3-alpine' 
-      args '-v /root/.m2:/root/.m2' 
-    }
+    none
   }
   stages {
     stage('Test') {
       steps {
-        sh 'mvnw -B -DskipTests clean package'
+        mvnw.bat clean
       }
     }
     stage('Build') {
       steps {
-        echo 'build'
+        mvnw.bat package
       }
     }
   }
