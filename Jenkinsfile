@@ -11,11 +11,5 @@ pipeline {
         bat(script: 'mvnw.cmd package', returnStatus: true, returnStdout: true)
       }
     }
-    stage('Deploy Dev Sevice') {
-      steps {
-        bat 'service spring-starter stop'
-        bat 'java -jar spring-starter-0.0.1-SNAPSHOT.jar'
-      }
-    }
   }
 }
