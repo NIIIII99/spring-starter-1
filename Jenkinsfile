@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        bat 'mvnw.cmd clean'
+        bat(script: 'mvnw.cmd clean', returnStatus: true, returnStdout: true)
       }
     }
     stage('Build') {
