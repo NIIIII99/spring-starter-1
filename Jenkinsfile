@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        bat 'mvnw.cmd package'
+        bat(script: 'mvnw.cmd package', returnStatus: true, returnStdout: true)
       }
     }
   }
